@@ -40,7 +40,7 @@ export const LREAL = z.number()
 	.check(
 		z.refine((num: number) => {
 			const arr = Float64Array.from([num])[0]
-			const diff = Math.abs(arr - num)
+			const diff = Math.abs(arr! - num)
 			const error = Math.abs(num / 10)
 			// console.log(`Float32Schema
 			//   num -> ${num}
